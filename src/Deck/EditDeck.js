@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link, useParams } from "react-router-dom";
 import { updateDeck, readDeck } from "./../utils/api/index";
-function EditDeck() {
+function EditDeck({ deck }) {
+  //Added to prevent uncontrolled component
+  const initialDeckState = {
+    name: "",
+    description: "",
+  };
   //Creates deckData object State
-  const [deckData, setDeckData] = useState("");
+  const [deckData, setDeckData] = useState({ ...initialDeckState });
   const deckId = useParams().deckId;
-  console.log(deckId);
 
   //added to pass test although app functions the same passing through result of this function
   // as a prop of EditDeck
@@ -42,7 +46,7 @@ function EditDeck() {
               <Link to="/">Home</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to={`/decks/${deckData.id}`}>{deckData.name}</Link>{" "}
+              <Link to={`/decks/${deck.id}`}>{deck.name}</Link>{" "}
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               Edit Deck

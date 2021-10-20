@@ -33,9 +33,7 @@ function DeckView() {
         <Study deck={deck} />
       </Route>
       <Route path={`/decks/:deckId/edit`}>
-        {/* Commented out to pass Test although app works the same passing deck as a prop */}
-        {/* <EditDeck deck={deck} /> */}
-        <EditDeck />
+        <EditDeck deck={deck} />
       </Route>
       <Route path={`${url}/cards/new`}>
         <AddCard deck={deck} />
