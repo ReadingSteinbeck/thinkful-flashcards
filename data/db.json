@@ -11,14 +11,9 @@
       "id": 2
     },
     {
-      "name": "This is a test",
-      "description": "Feel Free to love",
+      "name": "Psychology",
+      "description": "Intro to Psych",
       "id": 3
-    },
-    {
-      "name": "Dojer Cat",
-      "description": "Kicks me moar\n\n\n",
-      "id": 4
     }
   ],
   "cards": [
@@ -58,6 +53,24 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "Who is Sam boyfriend",
+      "back": "Dr. Freeze",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "who is SKinner",
+      "back": "psych dude",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "White Boy summer",
+      "back": "Chet Hanks",
+      "deckId": 3,
+      "id": 10
     }
   ]
 }

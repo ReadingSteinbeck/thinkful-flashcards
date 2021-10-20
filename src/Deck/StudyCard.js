@@ -66,7 +66,7 @@ function StudyCard({ deck }) {
           </li>
         );
     });
-    if (deck.cards.length < currentCard + 1 && deck.cards.length > 3) {
+    if (deck.cards.length < currentCard + 1 && deck.cards.length > 2) {
       const message = `Restart Cards? Click 'cancel' to return to the home page`;
       const result = window.confirm(message);
       result ? setCurrentCard(0) : history.push("/");
@@ -85,7 +85,11 @@ function StudyCard({ deck }) {
               </p>
             </div>
             <div>
-              <button type="button" className="btn btn-primary m-1">
+              <button
+                type="button"
+                className="btn btn-primary m-1"
+                onClick={() => history.push(`/decks/${deck.id}/cards/new`)}
+              >
                 + Add Cards
               </button>
             </div>

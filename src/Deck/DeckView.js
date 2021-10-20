@@ -4,6 +4,8 @@ import { readDeck } from "../utils/api";
 import Deck from "./Deck";
 import Study from "./Study";
 import EditDeck from "./EditDeck";
+import AddCard from "../Cards/AddCard";
+import EditCard from "../Cards/EditCard";
 
 function DeckView() {
   //Creates state for Deck
@@ -32,6 +34,12 @@ function DeckView() {
       </Route>
       <Route path={`${url}/edit`}>
         <EditDeck deck={deck} />
+      </Route>
+      <Route path={`${url}/cards/new`}>
+        <AddCard deck={deck} />
+      </Route>
+      <Route path={`${url}/cards/:cardId/edit`}>
+        <EditCard deck={deck} />
       </Route>
     </Switch>
   );
