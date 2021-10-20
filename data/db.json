@@ -11,9 +11,9 @@
       "id": 2
     },
     {
-      "name": "New Deck",
-      "description": "New Deck\n",
-      "id": 4
+      "name": "Test Deck",
+      "description": "Test Deck",
+      "id": 3
     }
   ],
   "cards": [
@@ -55,16 +55,10 @@
       "id": 7
     },
     {
-      "front": "Hiere",
-      "back": "Back",
-      "deckId": 4,
-      "id": 11
-    },
-    {
-      "front": "New Card",
-      "back": "Who dis",
-      "deckId": 4,
-      "id": 12
+      "front": "1st card",
+      "back": "anser gfd",
+      "deckId": 3,
+      "id": 8
     }
   ]
 }

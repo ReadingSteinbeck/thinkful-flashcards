@@ -1,9 +1,21 @@
-import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { updateDeck } from "./../utils/api/index";
-function EditDeck({ deck }) {
+import React, { useState, useEffect } from "react";
+import { useHistory, Link, useParams } from "react-router-dom";
+import { updateDeck, readDeck } from "./../utils/api/index";
+function EditDeck() {
   //Creates deckData object State
-  const [deckData, setDeckData] = useState({ ...deck });
+  const [deckData, setDeckData] = useState("");
+  const deckId = useParams().deckId;
+  console.log(deckId);
+
+  //added to pass test although app functions the same passing through result of this function
+  // as a prop of EditDeck
+  useEffect(() => {
+    async function loadDeck() {
+      const results = await readDeck(deckId);
+      setDeckData(results);
+    }
+    loadDeck();
+  }, [deckId]);
 
   //handlers
   const handleChange = ({ target }) => {
@@ -30,7 +42,7 @@ function EditDeck({ deck }) {
               <Link to="/">Home</Link>
             </li>
             <li className="breadcrumb-item">
-              <Link to={`/decks/${deck.id}`}>{deck.name}</Link>{" "}
+              <Link to={`/decks/${deckData.id}`}>{deckData.name}</Link>{" "}
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               Edit Deck
@@ -71,7 +83,7 @@ function EditDeck({ deck }) {
           <button
             type="button"
             className=" btn btn-secondary m-1"
-            onClick={() => history.push(`/decks/${deck.id}`)}
+            onClick={() => history.push(`/decks/${deckData.id}`)}
           >
             Cancel
           </button>

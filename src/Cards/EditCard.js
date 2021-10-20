@@ -44,13 +44,13 @@ function EditCard({ deck }) {
               <Link to={`/decks/${deck.id}`}>{deck.name}</Link>{" "}
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              Add Card
+              Edit Card {cardId}
             </li>
           </ol>
         </nav>
       </div>
       <div>
-        <h1>{deck.name} : Add Card</h1>
+        <h1>Edit Card</h1>
       </div>
       <div>
         <form onSubmit={handleSubmit}>
