@@ -1,0 +1,7 @@
+ul {
+  list-style-type: none;
+}
+textarea,
+input {
+  width: 600px;
+}
