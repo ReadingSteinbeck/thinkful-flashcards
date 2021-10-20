@@ -11,9 +11,9 @@
       "id": 2
     },
     {
-      "name": "Psychology",
-      "description": "Intro to Psych",
-      "id": 3
+      "name": "New Deck",
+      "description": "New Deck\n",
+      "id": 4
     }
   ],
   "cards": [
@@ -55,22 +55,16 @@
       "id": 7
     },
     {
-      "front": "Who is Sam boyfriend",
-      "back": "Dr. Freeze",
-      "deckId": 3,
-      "id": 8
+      "front": "Hiere",
+      "back": "Back",
+      "deckId": 4,
+      "id": 11
     },
     {
-      "front": "who is SKinner",
-      "back": "psych dude",
-      "deckId": 3,
-      "id": 9
-    },
-    {
-      "front": "White Boy summer",
-      "back": "Chet Hanks",
-      "deckId": 3,
-      "id": 10
+      "front": "New Card",
+      "back": "Who dis",
+      "deckId": 4,
+      "id": 12
     }
   ]
 }

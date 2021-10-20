@@ -17,7 +17,7 @@ function StudyCard({ deck }) {
             <div className="deck border border-secondary mt-1">
               <div>
                 <h2>
-                  {index + 1} of {deck.cards.length}
+                  Card {index + 1} of {deck.cards.length}
                 </h2>
                 <p>{card.front}</p>
               </div>

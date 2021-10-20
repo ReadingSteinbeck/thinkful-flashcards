@@ -1,6 +1,17 @@
 import React from "react";
 import { useRouteMatch, useHistory } from "react-router-dom";
+import { deleteCard } from "../utils/api";
 function CardView({ card }) {
+  //handlers
+  const handleDeleteCard = async () => {
+    const message = "Delete this Card? You will not be able to recover it.";
+    const result = window.confirm(message);
+    if (result) {
+      await deleteCard(card.id);
+      history.go(0);
+    }
+  };
+
   const { url } = useRouteMatch();
   const history = useHistory();
   return (
@@ -15,7 +26,11 @@ function CardView({ card }) {
         >
           Edit
         </button>
-        <button type="button" className=" btn btn-danger m-1">
+        <button
+          type="button"
+          className=" btn btn-danger m-1"
+          onClick={handleDeleteCard}
+        >
           Delete
         </button>
       </div>

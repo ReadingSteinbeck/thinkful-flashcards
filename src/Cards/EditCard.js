@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
-import { readCard } from "./../utils/api/index";
+import { readCard, updateCard } from "./../utils/api/index";
 function EditCard({ deck }) {
   //Creates const for cardId Parameter
   const cardId = useParams().cardId;
-  const currentCard = deck.cards[cardId - 1];
 
   //Creates cardData object State
-  const [cardData, setCardData] = useState({ ...currentCard });
+  const [cardData, setCardData] = useState({});
+  //This use effect function loads the card using cardId param and sets that card as cardData state
+  useEffect(() => {
+    async function loadCard() {
+      const card = await readCard(cardId);
+      setCardData({ ...card });
+    }
+    loadCard();
+  }, [cardId]);
 
   //Handlers
   const handleChange = ({ target }) => {
@@ -16,8 +23,10 @@ function EditCard({ deck }) {
       [target.name]: target.value,
     });
   };
-  console.log(cardData);
-  const handleSubmit = async () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await updateCard(cardData);
     history.push(`/decks/${deck.id}`);
   };
 
