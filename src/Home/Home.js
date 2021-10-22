@@ -36,7 +36,6 @@ function Home() {
             </button>
           </div>
           <div className="deck-list">
-            {/* need to create DeckList component and deck component */}
             <DeckList decks={decks} />
           </div>
         </Route>
